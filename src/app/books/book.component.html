@@ -3,8 +3,8 @@
     <h1>Books</h1>
     <mat-form-field class="contactus-full-width text-end" appearance="fill" style="background-color: white;">
         <mat-label>Search</mat-label>
-        <input matInput class="search-query"  autocomplete="off"  name="search">
-        <button style="border: none;" matSuffix mat-button><mat-icon >search</mat-icon></button>
+        <input matInput class="search-query"  autocomplete="off"  name="search" [(ngModel)]="listFilter">
+        <button style="border: none;" matSuffix mat-button (click)="search()"><mat-icon >search</mat-icon></button>
     </mat-form-field>
 </div>
 <div class="loader" *ngIf="loader">
@@ -24,7 +24,6 @@
                 <p>Updated {{book.updated | titlecase}}</p>
             </mat-card-content>
         </mat-card>
-        <div></div>
     </div>
 </div>
 

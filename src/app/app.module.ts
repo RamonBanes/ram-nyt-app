@@ -45,7 +45,7 @@ import { ContactUsGuard } from './contact-us/contact-us.guard';
     ReactiveFormsModule,
     RouterModule.forRoot([
       {path: 'stories', component: StoryComponent},
-      {path: 'contact-us', component: ContactUsComponent},
+      {path: 'contact-us', canDeactivate: [ContactUsGuard], component: ContactUsComponent},
       {path: 'movies', component: MovieComponent},
       {path: 'books', component: BookComponent},
       {path: '**', component: StoryComponent}

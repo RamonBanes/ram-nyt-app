@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormControl, FormGroup, FormGroupDirective, NgForm, Validators } from '@angular/forms';
-import { ErrorStateMatcher } from '@angular/material/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { debounceTime, Observable } from 'rxjs';
 import { ComponentCanDeactivate } from './contact-us.guard';
@@ -96,7 +95,7 @@ private validationMessages = [
 
   openSnackBar() {
     this.contactUsForm.reset();
-    this._snackBar.open('Thank You!', 'cancel');
+    this._snackBar.open('Thank You!', 'Cancel');
   }
 
   setMessage(c: AbstractControl): void {
