@@ -1,0 +1,33 @@
+.center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.contactus-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+}
+.color {
+    color: white;
+}
+
+.header{
+    max-height: 500px;
+}
+.contactus-full-width {
+    width: 100%;
+}
+
+.button-row {
+    display: table-cell;
+    width: 490px;
+}
+
+.button-row {
+    margin: 8px 8px 8px 0;
+}
+
+.body{
+    background-color: lightgray;
+}

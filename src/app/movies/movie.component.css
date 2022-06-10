@@ -1,0 +1,73 @@
+@use '~@angular/material' as mat;
+@import '~@angular/material/theming';
+@include mat-core();
+
+.color {
+  color: white;
+}
+.mat-card {
+  max-width: 500px;
+  width: 50%;
+  
+}
+.center{
+display: flex;
+justify-content: center;
+align-items: center;
+}
+.scrollable-content {
+    height: 800px; 
+    overflow-y: scroll;
+} 
+.sticky {
+    position: sticky;
+    position: -webkit-sticky; /* For macOS/iOS Safari */
+    top: 0; /* Sets the sticky toolbar to be on top */
+    z-index: 1000; /* Ensure that your app's content doesn't overlap the toolbar */
+}
+.header{
+  max-height: 500px;
+  background-color: black
+}
+
+.text-end {
+  position: absolute;
+  right: 120px;  
+  width: 200px;
+  height: 55px;
+} 
+.body{
+  background-color: lightgray;
+}
+@keyframes loader-animation {
+	0% {
+		left: -100%;
+	}
+	49% {
+		left: 100%;
+	}
+	50% {
+		left: 100%;
+	}
+	100% {
+		left: -100%;
+	}
+}
+.loader {
+	height: 5px;
+	width: 100%;
+	overflow: hidden;
+}
+.loader .bar {
+	position: relative;
+	height: 5px;
+	width: 100%;
+	background-color: dodgerblue;
+	animation-name: loader-animation;
+	animation-duration: 3s;
+	animation-iteration-count: infinite;
+	animation-timing-function: ease-in-out;
+}
+input.search-query {
+    color: black;
+}

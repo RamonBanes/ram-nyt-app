@@ -1,0 +1,33 @@
+
+<div class="center color header">
+    <h1>Books</h1>
+    <mat-form-field class="contactus-full-width text-end" appearance="fill" style="background-color: white;">
+        <mat-label>Search</mat-label>
+        <input matInput class="search-query"  autocomplete="off"  name="search">
+        <button style="border: none;" matSuffix mat-button><mat-icon >search</mat-icon></button>
+    </mat-form-field>
+</div>
+<div class="loader" *ngIf="loader">
+    <div class="bar"></div>
+</div>
+<div class="scrollable-content color-primary body">
+    <div class="center" *ngFor="let book of books">
+        <mat-card class="mat-card" style="margin-bottom: 5px; margin-top: 5px;">
+            <mat-card-title-group>
+                <mat-card-title>{{book.list_name}}</mat-card-title>
+                <mat-card-subtitle><i>{{book.display_name}}</i></mat-card-subtitle>
+            </mat-card-title-group>
+            <mat-card-content>
+                <p>Encoded Name: {{book.list_name_encoded | titlecase}}</p>
+                <p>Newest Published Date: {{book.newest_published_date | date :'LLL dd, yyyy'}}</p>
+                <p>Oldest Published Date: {{book.oldest_published_date | date :'LLL dd, yyyy'}}</p>
+                <p>Updated {{book.updated | titlecase}}</p>
+            </mat-card-content>
+        </mat-card>
+        <div></div>
+    </div>
+</div>
+
+
+
+  

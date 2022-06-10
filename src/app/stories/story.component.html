@@ -1,0 +1,38 @@
+
+<div class="center color header" style="background-color: black;">
+    <h1>Top Stories</h1>
+    <select class="text-end" #cricket (change)="update($event)">
+        <option value="">Select section...</option>
+        <option *ngFor="let section of sections" [value]="section">
+            {{ section }}
+        </option>
+        </select>
+</div>
+<div class="loader" *ngIf="loader">
+    <div class="bar"></div>
+</div>
+<div class="center body">
+    <h2>{{ selected | titlecase }}</h2>
+</div>
+
+<div class="scrollable-content color-primary body">
+    <div class="center" *ngFor="let story of stories">
+        <mat-card class="mat-card" style="margin-bottom: 5px; margin-top: 5px;">
+            <mat-card-title-group>
+                <mat-card-title>{{story.title}}</mat-card-title>
+            <mat-card-subtitle><i>{{story.byline}}</i></mat-card-subtitle>
+            </mat-card-title-group>
+            
+            <mat-card-content>
+                <p>{{story.section | titlecase}}</p>
+                <p>{{story.abstract}}</p>
+            </mat-card-content>
+            <mat-card-actions>
+                <a mat-raised-button href={{story.url}} target="_blank"><button mat-button>More Details</button></a>
+            </mat-card-actions>
+        </mat-card>
+        <div></div>
+    </div>
+</div>
+
+  

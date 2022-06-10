@@ -1,0 +1,35 @@
+
+<div class="center color header">
+    <h1>Movies</h1>
+    <mat-form-field class="contactus-full-width text-end" appearance="fill" style="background-color: white;">
+        <mat-label>Search</mat-label>
+        <input matInput  autocomplete="off"  class="search-query" name="search">
+        <button style="border: none;" matSuffix mat-button ><mat-icon >search</mat-icon></button>
+    </mat-form-field>
+</div>
+<div class="loader" *ngIf="loader">
+    <div class="bar"></div>
+</div>
+<div class="scrollable-content color-primary body">
+    <div class="center" *ngFor="let movie of movies">
+        <mat-card class="mat-card" style="margin-bottom: 5px; margin-top: 5px;">
+            <mat-card-title-group>
+                <mat-card-title>{{movie.display_title}}</mat-card-title>
+                <mat-card-subtitle><i>{{movie.byline}}</i></mat-card-subtitle>
+                <img mat-card-md-image src={{movie.multimedia.src}} >
+            </mat-card-title-group>
+            <mat-card-content>
+                <p>{{movie.summary_short}}</p>
+                <p>{{movie.publication_date | date :'LLL dd, yyyy'}}</p>
+            </mat-card-content>
+            <mat-card-actions>
+                <a mat-raised-button href={{movie.link.url}} target="_blank"><button mat-button>More Details</button></a>
+            </mat-card-actions>
+        </mat-card>
+        <div></div>
+    </div>
+</div>
+
+
+
+  

@@ -1,0 +1,53 @@
+
+<div class="center color header" style="background-color: black;">
+    <h1>Contact Us Form</h1>
+</div>
+<div class="center">
+    <form [formGroup]="contactUsForm"
+    autocomplete="off">
+        <mat-form-field class="contactus-full-width" appearance="fill" aria-required="true">
+            <mat-label>First Name</mat-label>
+            <input matInput required="true" name="fname" 
+            formControlName="fname"
+             name="fname" 
+             [ngClass]="{
+                'form-control': true,
+                'is-invalid': errMessage.fname
+            }" >
+                <mat-error>{{errMessage.fname}}</mat-error>
+        </mat-form-field>
+        <mat-form-field class="contactus-full-width" appearance="fill">
+            <mat-label>Last Name</mat-label>
+            <input matInput required="true" name="lname"  formControlName="lname" name="lname" [ngClass]="{
+                'form-control': true,
+                'is-invalid': errMessage.lname
+            }" >
+            <mat-error>{{errMessage.lname}}</mat-error> 
+        </mat-form-field>
+        <mat-form-field class="contactus-full-width" appearance="fill">
+            <mat-label>Title/Summary</mat-label>
+            <input matInput required="true" name="summary"  formControlName="summary" name="summary" [ngClass]="{
+                'form-control': true,
+                'is-invalid': errMessage.summary
+            }" >
+            <mat-error>{{errMessage.summary}}</mat-error>
+        </mat-form-field>
+        <mat-form-field class="contactus-full-width" appearance="fill">
+            <mat-label>Message Body</mat-label>
+            <textarea matInput required="true" rows="10" name="message" formControlName="message" name="message" [ngClass]="{
+                'form-control': true,
+                'is-invalid': errMessage.message
+            }"></textarea>
+            <mat-error>{{errMessage.message}}</mat-error>
+        </mat-form-field>
+        <mat-card-actions>
+            <button type="submit" class="btn btn-primary btn-sm"
+                [title]="contactUsForm.valid? 'Add your entered data': 'Disabled until the form data is valid'"
+                [disabled]="!contactUsForm.valid"
+                (click)="openSnackBar()"
+                >
+                SAVE
+                </button>
+        </mat-card-actions>
+    </form>
+</div>
